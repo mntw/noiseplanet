@@ -118,6 +118,7 @@ def match_leuven(graph, track):
     lat_corr, lon_corr = [], []
     lat_nodes = matcher.lattice_best
     for idx, m in enumerate(lat_nodes):
+        if idx >= len(track): break # fix from dev https://github.com/arthurdjn/noiseplanet/issues/2
         lat, lon = m.edge_m.pi[:2]
         lat_corr.append(lat)
         lon_corr.append(lon)
