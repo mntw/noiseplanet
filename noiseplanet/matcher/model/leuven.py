@@ -18,7 +18,7 @@ from leuvenmapmatching.matcher.distance import DistanceMatcher   # map matching
 from leuvenmapmatching.map.inmem import InMemMap                 # leuven graph object
 
 
-def match_leuven(graph, track):
+def match_leuven(graph, track, digraph=False):
     """
      Algorithm to match the track to the most probable route.
      
@@ -98,7 +98,8 @@ def match_leuven(graph, track):
     for edge in edges_id:
         node_a, node_b = edge[0], edge[1]
         map_con.add_edge(node_a, node_b)
-        map_con.add_edge(node_b, node_a)
+        if digraph == False:
+            map_con.add_edge(node_b, node_a)
 
     map_con.purge()
     
