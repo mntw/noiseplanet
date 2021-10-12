@@ -25,7 +25,7 @@ setup(name='noiseplanet',
         license = 'Apache License-2.0',
 
         install_requires = ['numpy', 'pandas', 'osmnx', 
-                        'pyproj', 'leuvenmapmatching==1.1.1',
+                        'pyproj', 'leuvenmapmatching==0.5.3',
                         'networkx'],
         packages = find_packages(),
         # namespace_packages = ['noiseplanet'],
